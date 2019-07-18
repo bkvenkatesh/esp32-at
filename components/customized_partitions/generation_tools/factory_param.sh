@@ -24,9 +24,9 @@
 
 PARTITION_NAME=$1
 TARGET_FOLDER=$2
-TOOL_PATH=$PROJECT_PATH/tools/factory_param_generate.py
+TOOL_PATH=$IDF_PATH/../tools/factory_param_generate.py
 
-RAW_DATA_FOLDER=$PROJECT_PATH/components/customized_partitions/raw_data/factory_param
+RAW_DATA_FOLDER=$IDF_PATH/../components/customized_partitions/raw_data/factory_param
 
 MODULE_FILE=$(ls $RAW_DATA_FOLDER/factory_param_data.csv | awk '{print $1}')
 DEFINE_FILE=$(ls $RAW_DATA_FOLDER/factory_param_type.csv | awk '{print $1}')
@@ -35,4 +35,4 @@ LOG_FILE=$PROJECT_PATH/build/factory/factory_parameter.log
 
 echo "generating factory_param.bin($MODULE_NAME): python $TOOL_PATH -t $TARGET_FOLDER/$PARTITION_NAME.bin $MODULE_FILE"
 
-python $TOOL_PATH --platform $ESP_AT_PROJECT_PLATFORM --module $ESP_AT_MODULE_NAME --bin_name $TARGET_FOLDER/$PARTITION_NAME.bin --define_file $DEFINE_FILE --module_file $MODULE_FILE --log_file $LOG_FILE
+python $TOOL_PATH --platform $ESP_AT_PROJECT_PLATFORM --module WROVER-32 --bin_name $TARGET_FOLDER/$PARTITION_NAME.bin --define_file $DEFINE_FILE --module_file $MODULE_FILE --log_file $LOG_FILE
