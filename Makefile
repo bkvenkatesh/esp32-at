@@ -5,11 +5,13 @@
 
 PROJECT_NAME := esp-at
 export ESP_AT_PROJECT_PLATFORM ?= PLATFORM_ESP32
-export ESP_AT_MODULE_NAME ?= WROOM-32
+export ESP_AT_MODULE_NAME ?= WROVER-32
 
 export ESP_AT_PROJECT_PATH := $(PWD)
 
 export ESP_AT_IMAGE_DIR ?= $(ESP_AT_PROJECT_PATH)/components/fs_image
+export ESP_AT_MODULE_CONFIG_DIR :=  module_config/module_esp32_default
+
 EXTRA_COMPONENT_DIRS := $(ESP_AT_PROJECT_PATH)/tools/mkfatfs
 
 IDF_DIR := esp-idf
