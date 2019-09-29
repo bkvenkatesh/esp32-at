@@ -82,7 +82,7 @@ HttpdBuiltInUrl builtInUrls[] = {
 
 void app_main()
 {
-    int ret;
+/*    int ret;
     nvs_flash_init();
 
     ESP_ERROR_CHECK(esp_at_init_parse());
@@ -91,5 +91,8 @@ void app_main()
     assert(ret == 1);
 #endif
     httpdInit(builtInUrls, 80);
+*/
+
+    printf("Hello World ESP32\n");
 }
 
